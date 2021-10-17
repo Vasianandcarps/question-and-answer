@@ -6,22 +6,14 @@ let questions = [
 ];
 let answers = ["коньки", "яблоки", "учебники", "полотенце"];
 let n = questions.length;
-let m = answers.length;
-function randomQuestions(questions) {
-  return questions[getRandomInt(n)];
-}
-function randomAnswers(answers) {
-  return answers[getRandomInt(n)];
-}
-function randomAnswers1(answers) {
-  return answers[getRandomInt(n)];
+function random(arr) {
+  return arr[getRandomInt(n)];
 }
 function getRandomInt(n) {
   return Math.floor(Math.random() * n);
 }
-
-let question = randomQuestions(questions);
-let answer = randomAnswers(answers);
-let answer1 = randomAnswers1(answers);
+let question = random(questions);
+let answer = random(answers);
+let answer1 = random(answers);
 
 alert(question + ": " + answer + "," + answer1);
