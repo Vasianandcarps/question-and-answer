@@ -5,15 +5,21 @@ let questions = [
   "Что мне взять с собой в бассейн?",
 ];
 let answers = ["коньки", "яблоки", "учебники", "полотенце"];
-let n = questions.length;
-function random(arr) {
-  return arr[getRandomInt(n)];
-}
-function getRandomInt(n) {
-  return Math.floor(Math.random() * n);
-}
-let question = random(questions);
-let answer = random(answers);
-let answer1 = random(answers);
+let n = prompt("Сколько ответов хотите получить введите число от 1-4");
 
-alert(question + ": " + answer + "," + answer1);
+function random(arr, n) {
+  return arr[getRandomInt(arr)];
+}
+
+function getRandomInt(questions) {
+  return Math.floor(Math.random() * questions.length);
+}
+
+document.write(random(questions, 1) + ":");
+for (let i = 0; i < n; i++) {
+  if (n > 1) {
+    document.write("," + random(answers, i));
+  } else {
+    document.write(random(answers, i));
+  }
+}
